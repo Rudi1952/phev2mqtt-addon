@@ -1,5 +1,7 @@
 #!/usr/bin/with-contenv bashio
 
+export HOME=/root
+
 CONFIG_PATH=/data/options.json
 
 export mqtt_server="$(bashio::config 'mqtt_server')"
@@ -21,4 +23,3 @@ echo Starting phev2mqtt
         --mqtt_server "tcp://${mqtt_server}/" \
         --mqtt_username "${mqtt_user}" \
         --mqtt_password "${mqtt_password}"
-
